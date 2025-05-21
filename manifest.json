@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Faloo Chapter Helper",
+  "version": "0.1.1",
+  "description": "Copies chapter content or OCRs image-based chapters on Faloo.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "clipboardWrite",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://b.faloo.com/*",
+    "https://read.faloo.com/*",
+    "https://p.faloo.com/*",
+    "https://openrouter.ai/api/v1/chat/completions"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://b.faloo.com/*.html"],
+      "js": ["dom-to-image-more.min.js", "content.js"],
+      "css": ["style.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["dom-to-image-more.min.js"],
+      "matches": ["https://b.faloo.com/*"]
+    }
+  ]
+}

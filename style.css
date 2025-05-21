@@ -1,0 +1,49 @@
+/* style.css */
+#falooChapterHelperButton {
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff; /* Blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease;
+    margin: 5px; /* Added margin for spacing */
+}
+
+#falooChapterHelperButton:hover {
+    background-color: #0056b3; /* Darker Blue */
+}
+
+#falooChapterHelperButton:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+#falooChapterHelperNotification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    z-index: 99999; /* Ensure it's on top */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+#falooChapterHelperNotification.info {
+    background-color: #17a2b8; /* Teal */
+}
+
+#falooChapterHelperNotification.success {
+    background-color: #28a745; /* Green */
+}
+
+#falooChapterHelperNotification.error {
+    background-color: #dc3545; /* Red */
+}
